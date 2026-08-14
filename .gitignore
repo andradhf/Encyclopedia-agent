@@ -1,2 +1,9 @@
 /.venv
 .env
+
+# IngestionPipeline local run artifacts (source PDFs, chunks, images, checkpoints)
+src/encyclopedia_agent/Service/IngestionPipeline/input/
+src/encyclopedia_agent/Service/IngestionPipeline/output/
+
+# Evaluation run outputs (per-run CSV score reports)
+src/encyclopedia_agent/Service/Evaluation/output/

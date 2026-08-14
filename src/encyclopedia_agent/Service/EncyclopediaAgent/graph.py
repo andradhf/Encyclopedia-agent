@@ -34,7 +34,7 @@ def build_agent(checkpointer=None):
     A factory rather than a module-level singleton so callers (e.g. the
     Streamlit UI) can inject a checkpointer for multi-turn memory.
     """
-    model = init_chat_model(model="google_genai:gemini-3.6-flash")
+    model = init_chat_model(model="google_genai:gemini-3.1-flash-lite")
     return create_deep_agent(
         model=model,
         tools=[search_documentation],

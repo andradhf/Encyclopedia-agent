@@ -76,7 +76,7 @@ if prompt:
                 if mode == "messages":
                     message_chunk, metadata = chunk
                     if namespace == () and metadata.get("langgraph_node") == "model":
-                        piece = message_chunk.content
+                        piece = message_chunk.text
                         if piece:
                             answer_text += piece
                             answer_placeholder.markdown(answer_text + "▌")

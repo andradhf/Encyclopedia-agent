@@ -15,7 +15,7 @@ from ..config import (
 class QdrantEncyclopediaStore:
     """Query-time interface for the collection built by Service/IngestionPipeline.
 
-    That pipeline wrote a flat payload (`text`, `doc`, `headers`, `pages`,
+    That pipeline wrote a flat payload (`text`, `doc`, `headers`, `page_index`,
     `has_image`, `image_urls`) on the default unnamed vector, not
     langchain_qdrant's `page_content`/`metadata` schema, so we talk to
     qdrant_client directly instead of using QdrantVectorStore.
@@ -43,7 +43,7 @@ class QdrantEncyclopediaStore:
                 metadata={
                     "doc": point.payload.get("doc"),
                     "headers": point.payload.get("headers"),
-                    "pages": point.payload.get("pages"),
+                    "page_index": point.payload.get("page_index"),
                     "has_image": point.payload.get("has_image"),
                     "image_urls": point.payload.get("image_urls"),
                 },

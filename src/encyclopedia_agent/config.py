@@ -1,5 +1,9 @@
 import os
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 QDRANT_URL = os.environ.get("QDRANT_URL")
 QDRANT_API_KEY = os.environ.get("QDRANT_API_KEY")
 QDRANT_COLLECTION = os.environ.get("QDRANT_COLLECTION", "encyclopedia")
